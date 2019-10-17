@@ -3773,7 +3773,7 @@
           s = n(166),
           u = n(0);
         function p(t) {
-          (e && Object({ NODE_ENV: "production", PUBLIC_URL: "" })) ||
+          (e && Object({ NODE_ENV: "production", PUBLIC_URL: "." })) ||
             console.error("[@ant-design/icons-react]: " + t + ".");
         }
         function f(e) {
@@ -47538,4 +47538,4 @@
     }
   ]
 ]);
-//# sourceMappingURL=2.6efa8581.chunk.js.map
+//# sourceMappingURL=2.22fc9cb3.chunk.js.map
