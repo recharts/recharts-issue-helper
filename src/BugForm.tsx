@@ -21,7 +21,7 @@ const BugForm: React.FC<Props> = ({
     {/* ==================================== Environment ==================================== */}
     <FormItem>
       <Col span={11}>
-        {/* antd version */}
+        {/* version */}
         <FormItem
           label={
             <FormattedMessage id="issue.version" defaultMessage="Version" />

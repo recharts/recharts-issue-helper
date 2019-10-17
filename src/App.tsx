@@ -20,10 +20,7 @@ const App: React.FC = () => {
         <Header className={styles.header}>
           <div className={styles.headerContainer}>
             <div className={styles.logo}>
-              <img
-                alt="logo"
-                src="https://gw.alipayobjects.com/zos/rmsportal/KDpgvguMpGfqaHPjicRK.svg"
-              />
+              <span className={styles.recharts}>{"<Recharts/>"}</span>
               <h1>Issue Helper</h1>
             </div>
             <div className={styles.locale}>
@@ -40,17 +37,17 @@ const App: React.FC = () => {
           </Content>
         </IntlProvider>
         <Footer style={{ textAlign: "center" }}>
-          Inspired by{" "}
+          Forked from{" "}
           <a
-            href="https://new-issue.vuejs.org/"
+            href="http://new-issue.ant.design/"
             target="_blank"
             rel="noopener noreferrer"
           >
-            Vue Issue Helper
+            Antd Issue Helper
           </a>{" "}
-          ·{" "}
-          <a href="https://github.com/ant-design/antd-issue-helper">
-            Source Code
+          to{" "}
+          <a href="https://github.com/recharts/recharts-issue-helper">
+            Recharts Issue Helper
           </a>
         </Footer>
       </Layout>

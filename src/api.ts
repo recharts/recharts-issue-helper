@@ -10,9 +10,7 @@ const npmEndpoint = "https://registry.npm.taobao.org";
 const endpoint = "https://api.github.com";
 
 const npmMapping: { [repo: string]: string } = {
-  "ant-design": "antd",
-  "ant-design-mobile": "antd-mobile",
-  "ant-design-mobile-rn": "@ant-design/react-native"
+  recharts: "recharts"
 };
 
 function checkStatus(response: Response) {
@@ -51,11 +49,10 @@ export function fetchVersions(repo: string) {
     .then(versions => versions.slice(0, 100));
 
   // We use github versions first, but if failed use npm versions as backup
-  return fetch(`${endpoint}/repos/ant-design/${repo}/releases?per_page=100`)
+  return fetch(`${endpoint}/repos/recharts/${repo}/tags?per_page=100`)
     .then(checkStatus)
     .then((response: Response) => response.json())
-    .then(releases => releases.filter((r: any) => !r.prerelease))
-    .then(releases => releases.map((r: any) => r.tag_name))
+    .then(releases => releases.map((r: any) => r.name))
     .then(versions => orderVersions(versions))
     .catch(err => {
       console.warn(err);
@@ -64,7 +61,7 @@ export function fetchVersions(repo: string) {
 }
 
 export function fetchIssues(repo: string, keyword: string) {
-  const q = encodeURIComponent(`is:issue repo:ant-design/${repo} ${keyword}`);
+  const q = encodeURIComponent(`is:issue repo:recharts/${repo} ${keyword}`);
   return fetch(`${endpoint}/search/issues?q=${q}&per_page=5`)
     .then(checkStatus)
     .then((response: Response) => response.json())
